@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -20,5 +20,14 @@ def about():
         course="B.Tech Information Technology"
     )
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+@app.route("/submit", methods=["POST"])
+
+@app.route("/submit", methods=["POST"])
+def submit():
+    name = request.form["name"]
+    return render_template("result.html", name=name)
 if __name__ == "__main__":
     app.run(debug=True)
