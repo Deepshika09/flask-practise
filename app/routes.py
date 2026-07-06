@@ -16,8 +16,7 @@ def about():
     return render_template(
         "about.html",
         title="About",
-        college="SEC",
-        course="B.Tech AI & DS"
+        
     )
 
 @main.route("/contact")
@@ -28,3 +27,4 @@ def contact():
 def submit():
     name = request.form.get("name")
     return render_template("result.html", name=name)
+    print("Routes loaded successfully!")
